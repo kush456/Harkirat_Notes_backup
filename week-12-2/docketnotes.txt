@@ -1,0 +1,22 @@
+see iske lecture notes to understand it on a high level 
+
+docker lets you create containers
+containers are basically mini computers running on your computer
+
+say you start a node.js application on a container on port 3000
+that is on that mini computer's port 3000, so if you do localhost:/3000, wont show anything
+
+so you can run mongo db node postgres etc on these containers withuot having to install them on your device
+you do this by using images, images are basicallythe mongo db postgres etc that can be used on containers
+think of them as CD a friend gave you that has a game on it downloaded from their pc, so you take that cd and download it yourself from it
+you can get these from dockerhub, you pull the image 
+
+
+Port mapping
+basically means if i run or let say connect to a mongo db server using compass on a certain port, it wont work
+i can map this port to map to the port of the container where my mongo is running
+
+
+-e means environment variables
+-d means detach mode
+-p means port mapping

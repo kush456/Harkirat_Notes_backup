@@ -1,0 +1,26 @@
+https://projects.100xdevs.com/tracks/Auth/auth-2
+
+why cannot we use local storage in nextjs auth?
+-get basics cleared
+-in nextjs, browser(client) sends an http request to the server(to get back the html file, not a axios type req)
+-the server is the mediator, it then sends a req to the database to get the data or whatever
+-then it returns an html file with the data
+-this is SSR
+
+-now local storage ka access client side ke paas hi hai not server side
+-so during ssr, server cannot access it
+-the initial req, when a user say goes to check his creds in the website, the initial req sent by the client here cannot have an auth header that can access the local storage
+-as then it becomes a CSR, client side req
+
+-so if the server does not get the jwt from the local storage, in the initial render it cannot send back the details
+-we could make subsequent requests, but the initial render cannot have the details this way OR teh pre-rendered stuff cannot have this auth header
+
+
+Why cookies?
+upon sigin, the server sets the cookie 
+-browsers have a property that once it is set, it will be sent by default in every request.
+-so after sigin, if we try to do anything that requires the auth again, like getting some details, then set cookie is already there 
+
+
+by defualt:
+have domains set and samesite to lax or strict to prevent csrf attacks 
