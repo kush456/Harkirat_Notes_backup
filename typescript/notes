@@ -1,0 +1,14 @@
+important things about typescript:
+- it is a superset of javascript, javascript but with types, strongly typed javascript
+which means any typscript code will run in js, but a js code wont work in ts
+- it is a statically typed language, meaning that the types are checked at compile time, not runtime
+which means, it is not the language that runs in your browser, node.js or runs at all
+it just all the compilation, then if it is good to go, it transpiles down to a javascript file, which then runs 
+
+initializing a typescript project:
+
+npm init -y ( package.json)
+then:
+npx tsc --init
+Change `rootDir` to `src` //ye command ni hai krna h ye 
+Change `outDir` to `dist` //ye command ni hai krna h ye 

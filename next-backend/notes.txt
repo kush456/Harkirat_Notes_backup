@@ -1,0 +1,32 @@
+see this image for the logic of server side rendering
+"C:\Users\Kushagra\Pictures\Screenshots\Screenshot 2024-12-03 232322.png"
+
+notes :
+https://projects.100xdevs.com/tracks/nextjs-2/next-2-1
+
+12. PRE SERVER ACTIONS
+without server actions, we had an api folder(opinionated), uske andar user folder as api/user ki saari routes hongi isme
+then uske andar route.ts file jiska code tha ye
+
+//we need to keep all our routes/backend in api folder
+//lets say usme ek route is user
+//toh our code goes inside a ts file called route.ts
+import client from "@/db"
+import { NextRequest } from "next/server";
+
+//the names are fixed, hence why it is an opinionated framework
+export async function POST(req : NextRequest){
+    //extract the body
+    const body = await req.json();
+    await client.user.create({ //agar aisi cheeze dont work, most prolly means await was needed
+        data: {
+            username: body.username,
+            password: body.password
+        }
+    })
+    
+    return Response.json({
+        message: "User created successfully"
+    })
+}
+
